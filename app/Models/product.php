@@ -5,18 +5,28 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class alternatives_units extends Model
+class product extends Model
 {
     use HasFactory;
+
     protected $fillable = [
-        'products_id',
-        'bulks_slug',
+        'id',
+        'name',
+        'price',
+        'description',
+        'color',
         'quantity',
-        'divide_or_multiply'
+        'height',
+        'width',
+        'depth',
+        'weight',
+        'category_id',
+        'active',
+        'bulk_slug'
 
     ];
 
-    protected $table = 'categories';
+    protected $table = 'product';
     protected $keyType = 'int';
     protected $primaryKey = 'id';
     public $incrementing = true;

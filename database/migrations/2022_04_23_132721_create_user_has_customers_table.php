@@ -17,10 +17,10 @@ return new class extends Migration
         Schema::create('user_has_customers', function (Blueprint $table) {
             $table->id();
             $table->unsignedInteger('user_id');
-            $table->unsignedInteger('customers_id');
+            $table->unsignedInteger('customer_id');
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('customers_id')->references('id')->on('customers');
+            $table->foreign('customer_id')->references('id')->on('customers');
         });
     }
 

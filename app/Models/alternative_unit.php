@@ -5,24 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class orders_items extends Model
+class alternative_unit extends Model
 {
     use HasFactory;
-
     protected $fillable = [
-        'seq',
-        'orders_id',
-        'products_id',
+        'product_id',
+        'bulk_slug',
         'quantity',
-        'value',
-        'discount',
-        'perc_discount'
+        'divide_or_multiply'
 
     ];
 
-    protected $table = 'orders_items';
+    protected $table = 'category';
     protected $keyType = 'int';
-    protected $primaryKey = 'seq';
+    protected $primaryKey = 'id';
     public $incrementing = true;
 
 }

@@ -5,19 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class user_has_customers extends Model
+class stock extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'users_id',
-        'customers_id'
+        'product_id',
+        'stock_location_id',
+        'quantity',
+        'lote'
+
     ];
 
-    protected $table = 'user_has_customers';
+    protected $table = 'stock';
     protected $keyType = 'int';
-    protected $primaryKey = 'users_id';
     public $incrementing = true;
 
 }
-

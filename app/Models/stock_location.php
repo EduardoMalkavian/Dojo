@@ -15,7 +15,7 @@ class stock_location extends Model
 
     ];
 
-    protected $table = 'stock_locations';
+    protected $table = 'stock_location';
     protected $keyType = 'int';
     protected $primaryKey = 'id';
     public $incrementing = true;

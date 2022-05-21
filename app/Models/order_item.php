@@ -5,21 +5,24 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class user extends Model
+class order_item extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'id',
-        'name',
-        'email',
-        'password',
-        'type'
+        'seq',
+        'orders_id',
+        'product_id',
+        'quantity',
+        'value',
+        'discount',
+        'perc_discount'
+
     ];
 
-    protected $table = 'user';
+    protected $table = 'order_item';
     protected $keyType = 'int';
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'seq';
     public $incrementing = true;
 
 }

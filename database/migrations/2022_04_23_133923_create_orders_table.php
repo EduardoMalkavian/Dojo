@@ -20,13 +20,13 @@ return new class extends Migration
             $table->date('date');
             $table->string('type',1);
             $table->string('status',1);
-            $table->string('customers_id');
+            $table->string('customer_id');
             $table->string('observation',200);
-            $table->unsignedInteger('type_payments_id');
+            $table->unsignedInteger('type_payment_id');
             $table->timestamps();
             $table->foreign('users_id')->references('id')->on('users');
-            $table->foreign('customers_id')->references('id')->on('customers');
-            $table->foreign('type_payments_id')->references('id')->on('type_payments');
+            $table->foreign('customer_id')->references('id')->on('customers');
+            $table->foreign('type_payment_id')->references('id')->on('type_payments');
         });
     }
 

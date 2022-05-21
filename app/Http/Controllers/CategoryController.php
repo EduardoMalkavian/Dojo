@@ -2,51 +2,47 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\categories;
+use App\Models\category;
 use Illuminate\Http\Request;
 
-class CategoriesController extends Controller{
+class CategoryController extends Controller{
 
 
     public function index()
     {
-        $data = categories::all();
+        $data = category::all();
         return response()->json($data);
     }
 
     public function show($id)
     {
-        $data = categories::find($id);
+        $data = category::find($id);
         return response()->json($data);
     }
 
     public function store(Request $request)
     {
         $request->validate([
-            'id' => 'required',
-            'name' => 'required',
-            'categories_id' => 'required',
+            'name' => 'required'
         ]);
 
-        $data = categories::create($request->all());
+        $data = category::create($request->all());
         return response()->json($data);
     }
 
     public function update(Request $request, $id)
     {
         $request->validate([
-            'id' => 'required',
-            'name' => 'required',
-            'categories_id' => 'required'
+            'name' => 'required'
         ]);
-        $data = categories::find($id);
+        $data = category::find($id);
         $data->update($request->all());
         return response()->json($data);
     }
 
     public function delete($id)
     {
-        $data = categories::find($id);
+        $data = category::find($id);
         $data->delete();
 
         return response()->json('',201);

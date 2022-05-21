@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\BulkController;
 use App\Http\Controllers\ProductsController;
-use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\CategoryController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -32,8 +32,8 @@ Route::put('products/{id}',[ProductsController::class,'update']);
 Route::delete('products/{id}',[ProductsController::class,'delete']);
 
 //categories
-Route::get('categories',[CategoriesController::class,'index']);
-Route::get('categories/{id}',[CategoriesController::class,'show']);
-Route::post('categories',[CategoriesController::class,'store']);
-Route::put('categories/{id}',[CategoriesController::class,'update']);
-Route::delete('categories/{id}',[CategoriesController::class,'delete']);
+Route::get('categories',[CategoryController::class,'index']);
+Route::get('categories/{id}',[CategoryController::class,'show']);
+Route::post('categories',[CategoryController::class,'store']);
+Route::put('categories/{id}',[CategoryController::class,'update']);
+Route::delete('categories/{id}',[CategoryController::class,'delete']);

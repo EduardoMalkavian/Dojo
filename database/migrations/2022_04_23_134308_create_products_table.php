@@ -24,12 +24,12 @@ return new class extends Migration
             $table->unsignedDouble('width');
             $table->unsignedDouble('depth');
             $table->unsignedDouble('weight');
-            $table->unsignedInteger('categories_id');
+            $table->unsignedInteger('category_id');
             $table->boolean('active');
-            $table->string('bulks_slug',2);
+            $table->string('bulk_slug',2);
             $table->timestamps();
-            $table->foreign('categories_id')->references('id')->on('categories');
-            $table->foreign('bulks_slug')->references('slug')->on('bulks');
+            $table->foreign('category_id')->references('id')->on('categories');
+            $table->foreign('bulk_slug')->references('slug')->on('bulks');
         });
     }
 

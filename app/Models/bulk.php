@@ -5,18 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class type_payments extends Model
+class bulk extends Model
 {
     use HasFactory;
-
+    
     protected $fillable = [
-        'id',
+        'slug',
         'name'
     ];
 
-    protected $table = 'type_payments';
-    protected $keyType = 'int';
-    protected $primaryKey = 'id';
-    public $incrementing = true;
+    protected $table = 'bulk';
+    protected $keyType = 'string';
+    protected $primaryKey = 'slug';
+    public $incrementing = false;
 
 }

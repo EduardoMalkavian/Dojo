@@ -5,20 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class stocks extends Model
+class category extends Model
 {
     use HasFactory;
-
     protected $fillable = [
-        'products_id',
-        'stock_location_id',
-        'quantity',
-        'lote'
-
+        'id',
+        'name',
+        'category_id'
     ];
 
-    protected $table = 'stocks';
+    protected $table = 'categories';
     protected $keyType = 'int';
+    protected $primaryKey = 'id';
     public $incrementing = true;
 
 }

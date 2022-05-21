@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class orders extends Model
+class order extends Model
 {
     use HasFactory;
 
@@ -16,9 +16,9 @@ class orders extends Model
         'date',
         'type',
         'status',
-        'customers_id',
+        'customer_id',
         'observation',
-        'type_payments_id'
+        'type_payment_id'
 
     ];
 
