@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class BulkController extends Controller{
 
+    private $model;
+    public function __construct(Bulk $model)
+    {
+        $this->model = $model;
+    }
+
 
     public function index()
     {
