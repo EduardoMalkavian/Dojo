@@ -75,14 +75,14 @@ Route::post('stocks_locations',[StockLocationController::class,'store']);
 Route::put('stocks_locations/{id}',[StockLocationController::class,'update']);
 Route::delete('stocks_locations/{id}',[StockLocationController::class,'delete']);
 
-/*
+
 //stocks
 Route::get('stocks',[StockController::class,'index']);
 Route::get('stocks/{???}',[StockController::class,'show']);
 Route::post('stocks',[StockController::class,'store']);
 Route::put('stocks/{???}',[StockController::class,'update']);
 Route::delete('stocks/{???}',[StockController::class,'delete']);
-*/
+
 
 //users
 Route::get('users',[UserController::class,'index']);
