@@ -16,16 +16,16 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('name',45);
-            $table->unsignedDouble('price');
-            $table->longText('description');
-            $table->string('color',45);
-            $table->unsignedDouble('quantity');
-            $table->unsignedDouble('height');
-            $table->unsignedDouble('width');
-            $table->unsignedDouble('depth');
-            $table->unsignedDouble('weight');
+            $table->unsignedDouble('price')->nullable();
+            $table->longText('description')->nullable();
+            $table->string('color',45)->nullable();
+            $table->unsignedDouble('quantity')->nullable();
+            $table->unsignedDouble('height')->nullable();
+            $table->unsignedDouble('width')->nullable();
+            $table->unsignedDouble('depth')->nullable();
+            $table->unsignedDouble('weight')->nullable();
             $table->unsignedInteger('category_id');
-            $table->boolean('active');
+            $table->boolean('active')->nullable();
             $table->string('bulk_slug',2);
             $table->timestamps();
             $table->foreign('category_id')->references('id')->on('categories');

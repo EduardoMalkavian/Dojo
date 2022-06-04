@@ -5,19 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class user_has_customer extends Model
+class AlternativeUnit extends Model
 {
     use HasFactory;
-
     protected $fillable = [
-        'users_id',
-        'customer_id'
+        'product_id',
+        'bulk_slug',
+        'quantity',
+        'divide_or_multiply'
+
     ];
 
-    protected $table = 'user_has_customer';
+    protected $table = 'alternatives_units';
     protected $keyType = 'int';
-    protected $primaryKey = 'users_id';
+    //protected $primaryKey = 'id';
     public $incrementing = true;
 
 }
-

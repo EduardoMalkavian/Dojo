@@ -2,49 +2,49 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Bulk;
+use App\Models\UserHasCustomer;
 use Illuminate\Http\Request;
 
-class BulkController extends Controller{
+class UserHasCustomerController extends Controller{
 
 
     public function index()
     {
-        $data = Bulk::all();
+        $data = UserHasCustomer::all();
         return response()->json($data);
     }
 
-    public function show($slug)
+    public function show($id)
     {
-        $data = Bulk::find($slug);
+        $data = UserHasCustomer::find($id);
         return response()->json($data);
     }
 
     public function store(Request $request)
     {
         $request->validate([
-            'slug' => 'required|unique:bulks|max:2',
-            'name' => 'required',
+            'users_id',
+            'customer_id'
         ]);
 
-        $data = Bulk::create($request->all());
+        $data = UserHasCustomer::create($request->all());
         return response()->json($data);
     }
 
-    public function update(Request $request, $slug)
+    public function update(Request $request, $id)
     {
         $request->validate([
-            'slug' => 'required|unique:bulks|max:2',
-            'name' => 'required',
+            'users_id',
+            'customer_id'
         ]);
-        $data = Bulk::find($slug);
+        $data = UserHasCustomer::find($id);
         $data->update($request->all());
         return response()->json($data);
     }
 
-    public function delete($slug)
+    public function delete($id)
     {
-        $data = Bulk::find($slug);
+        $data = UserHasCustomer::find($id);
         $data->delete();
 
         return response()->json('',201);

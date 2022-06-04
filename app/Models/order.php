@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class order extends Model
+class Order extends Model
 {
     use HasFactory;
 
@@ -23,8 +23,10 @@ class order extends Model
     ];
 
     protected $table = 'orders';
+    /*
     protected $keyType = 'int';
     protected $primaryKey = 'id';
     public $incrementing = true;
+    */
 
 }

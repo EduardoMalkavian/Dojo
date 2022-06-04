@@ -5,18 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class type_payment extends Model
+class UserHasCustomer extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'id',
-        'name'
+        'users_id',
+        'customer_id'
     ];
 
-    protected $table = 'type_payment';
+    protected $table = 'user_has_customers';
     protected $keyType = 'int';
-    protected $primaryKey = 'id';
+    //protected $primaryKey = 'users_id';
     public $incrementing = true;
 
 }
+

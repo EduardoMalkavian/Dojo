@@ -2,49 +2,49 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Bulk;
+use App\Models\Order;
 use Illuminate\Http\Request;
 
-class BulkController extends Controller{
+class OrderController extends Controller{
 
 
     public function index()
     {
-        $data = Bulk::all();
+        $data = Order::all();
         return response()->json($data);
     }
 
-    public function show($slug)
+    public function show($id)
     {
-        $data = Bulk::find($slug);
+        $data = Order::find($id);
         return response()->json($data);
     }
 
     public function store(Request $request)
     {
         $request->validate([
-            'slug' => 'required|unique:bulks|max:2',
-            'name' => 'required',
+            'number'=>'required',
+            'users_id'=>'required'
         ]);
 
-        $data = Bulk::create($request->all());
+        $data = Order::create($request->all());
         return response()->json($data);
     }
 
-    public function update(Request $request, $slug)
+    public function update(Request $request, $id)
     {
         $request->validate([
-            'slug' => 'required|unique:bulks|max:2',
-            'name' => 'required',
+            'number'=>'required',
+            'users_id'=>'required'
         ]);
-        $data = Bulk::find($slug);
+        $data = Order::find($id);
         $data->update($request->all());
         return response()->json($data);
     }
 
-    public function delete($slug)
+    public function delete($id)
     {
-        $data = Bulk::find($slug);
+        $data = Order::find($id);
         $data->delete();
 
         return response()->json('',201);

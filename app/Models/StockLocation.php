@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class stock_location extends Model
+class StockLocation extends Model
 {
     use HasFactory;
 
@@ -15,9 +15,11 @@ class stock_location extends Model
 
     ];
 
-    protected $table = 'stock_location';
+    protected $table = 'stocks_locations';
+    /*
     protected $keyType = 'int';
     protected $primaryKey = 'id';
     public $incrementing = true;
+    */
 
 }

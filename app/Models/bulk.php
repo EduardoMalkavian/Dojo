@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class bulk extends Model
+class Bulk extends Model
 {
     use HasFactory;
     
@@ -14,7 +14,7 @@ class bulk extends Model
         'name'
     ];
 
-    protected $table = 'bulk';
+    protected $table = 'bulks';
     protected $keyType = 'string';
     protected $primaryKey = 'slug';
     public $incrementing = false;

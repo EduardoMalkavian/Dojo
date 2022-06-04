@@ -17,9 +17,11 @@ class user extends Model
         'type'
     ];
 
-    protected $table = 'user';
+    protected $table = 'users';
+    /*
     protected $keyType = 'int';
     protected $primaryKey = 'id';
     public $incrementing = true;
+    */
 
 }

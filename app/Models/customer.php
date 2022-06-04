@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class customer extends Model
+class Customer extends Model
 {
     use HasFactory;
 
@@ -23,9 +23,11 @@ class customer extends Model
 
     ];
 
-    protected $table = 'customers';
+    protected $table = 'Customers';
+    /*
     protected $keyType = 'int';
     protected $primaryKey = 'id';
     public $incrementing = true;
+    */
 
 }
