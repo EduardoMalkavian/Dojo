@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('bulks', function (Blueprint $table) {
-            $table->string('slug',);
+            $table->char('slug',2)->primary();
             $table->string('name',45);
             $table->timestamps();
         });
