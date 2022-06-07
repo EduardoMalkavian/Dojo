@@ -29,9 +29,7 @@ class CategoryController extends Controller{
 
     public function store(CategoryRequest $request)
     {
-        $request->validate([
-            'name' => 'required'
-        ]);
+  
 
         $data = $this->model->create($request->all());
         return response()->json($data);
@@ -39,9 +37,7 @@ class CategoryController extends Controller{
 
     public function update(CategoryRequest $request, $id)
     {
-        $request->validate([
-            'name' => 'required'
-        ]);
+
         $data = $this->model->find($id);
         $data->update($request->all());
         return response()->json($data);

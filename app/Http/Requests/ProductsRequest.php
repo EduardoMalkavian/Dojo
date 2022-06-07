@@ -25,7 +25,6 @@ class ProductsmRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'price'=> 'required',
             'bulk_slug'=> 'required',
             'category_id'=> 'required'
         ];
