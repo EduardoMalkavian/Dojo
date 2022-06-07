@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UserHasCustomerRequest;
 use App\Models\UserHasCustomer;
 use Illuminate\Http\Request;
 
@@ -20,23 +21,16 @@ class UserHasCustomerController extends Controller{
         return response()->json($data);
     }
 
-    public function store(Request $request)
+    public function store(UserHasCustomerRequest $request)
     {
-        $request->validate([
-            'users_id',
-            'customer_id'
-        ]);
 
         $data = UserHasCustomer::create($request->all());
         return response()->json($data);
     }
 
-    public function update(Request $request, $id)
+    public function update(UserHasCustomerRequest $request, $id)
     {
-        $request->validate([
-            'users_id',
-            'customer_id'
-        ]);
+
         $data = UserHasCustomer::find($id);
         $data->update($request->all());
         return response()->json($data);

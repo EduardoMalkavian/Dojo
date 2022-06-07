@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\OrderItemRequest;
 use App\Models\OrderItem;
 use Illuminate\Http\Request;
 
@@ -20,25 +21,16 @@ class OrderItemController extends Controller{
         return response()->json($data);
     }
 
-    public function store(Request $request)
+    public function store(OrderItemRequest $request)
     {
-        $request->validate([
-            'product_id'=> 'requeried',
-            'quantity'=> 'requeried',
-            'value'=> 'requeried'
-        ]);
 
         $data = OrderItem::create($request->all());
         return response()->json($data);
     }
 
-    public function update(Request $request, $seq)
+    public function update(OrderItemRequest $request, $seq)
     {
-        $request->validate([
-            'product_id'=> 'requeried',
-            'quantity'=> 'requeried',
-            'value'=> 'requeried'
-        ]);
+
         $data = OrderItem::find($seq);
         $data->update($request->all());
         return response()->json($data);

@@ -24,7 +24,8 @@ class UserHasCustomerRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'users_id',
+            'customer_id'
         ];
     }
 }

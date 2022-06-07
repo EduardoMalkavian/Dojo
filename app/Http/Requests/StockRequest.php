@@ -24,7 +24,8 @@ class StockRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'number'=>'required',
+            'users_id'=>'required'
         ];
     }
 }

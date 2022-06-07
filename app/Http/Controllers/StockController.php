@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StockRequest;
 use App\Models\Stock;
 use Illuminate\Http\Request;
 
@@ -20,23 +21,15 @@ class StockController extends Controller{
         return response()->json($data);
     }
 
-    public function store(Request $request)
+    public function store(StockRequest $request)
     {
-        $request->validate([
-            'number'=>'required',
-            'users_id'=>'required'
-        ]);
 
         $data = Stock::create($request->all());
         return response()->json($data);
     }
 
-    public function update(Request $request, $id)
+    public function update(StockRequest $request, $id)
     {
-        $request->validate([
-            'number'=>'required',
-            'users_id'=>'required'
-        ]);
         $data = Stock::find($id);
         $data->update($request->all());
         return response()->json($data);

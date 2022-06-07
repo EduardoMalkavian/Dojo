@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AlternativeUnitRequest;
 use App\Models\AlternativeUnit;
 use Illuminate\Http\Request;
 
@@ -20,21 +21,15 @@ class AlternativeUnitController extends Controller{
         return response()->json($data);
     }
 
-    public function store(Request $request)
+    public function store(AlternativeUnitRequest $request)
     {
-        $request->validate([
-            'product_id'=>'required'
-        ]);
-
+    
         $data = AlternativeUnit::create($request->all());
         return response()->json($data);
     }
 
-    public function update(Request $request, $id)
+    public function update(AlternativeUnitRequest $request, $id)
     {
-        $request->validate([
-            'product_id'=>'required'
-        ]);
         $data = AlternativeUnit::find($id);
         $data->update($request->all());
         return response()->json($data);
