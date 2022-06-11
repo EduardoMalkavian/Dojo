@@ -7,7 +7,7 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\OrderItemController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\StockLocationController;
-//use App\Http\Controllers\StockController;
+use App\Http\Controllers\StockController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\TypePaymentController;
 //use App\Http\Controllers\UserHasCustomerController;
@@ -78,11 +78,6 @@ Route::delete('stocks_locations/{id}',[StockLocationController::class,'delete'])
 
 //stocks
 Route::get('stocks',[StockController::class,'index']);
-Route::get('stocks/{???}',[StockController::class,'show']);
-Route::post('stocks',[StockController::class,'store']);
-Route::put('stocks/{???}',[StockController::class,'update']);
-Route::delete('stocks/{???}',[StockController::class,'delete']);
-
 
 //users
 Route::get('users',[UserController::class,'index']);
@@ -97,21 +92,3 @@ Route::get('type_payments/{id}',[TypePaymentController::class,'show']);
 Route::post('type_payments',[TypePaymentController::class,'store']);
 Route::put('type_payments/{id}',[TypePaymentController::class,'update']);
 Route::delete('type_payments/{id}',[TypePaymentController::class,'delete']);
-
-/*
-//user_has_customers
-Route::get('user_has_customers',[UserHasCustomerController::class,'index']);
-Route::get('user_has_customers/{??}',[UserHasCustomerController::class,'show']);
-Route::post('user_has_customers',[UserHasCustomerController::class,'store']);
-Route::put('user_has_customers/{??}',[UserHasCustomerController::class,'update']);
-Route::delete('user_has_customers/{??}',[UserHasCustomerController::class,'delete']);
-*/
-
-/*
-//alternatives_units
-Route::get('alternatives_units',[AlternativeUnitController::class,'index']);
-Route::get('alternatives_units/{??}',[AlternativeUnitController::class,'show']);
-Route::post('alternatives_units',[AlternativeUnitController::class,'store']);
-Route::put('alternatives_units/{??}',[AlternativeUnitController::class,'update']);
-Route::delete('alternatives_units/{??}',[AlternativeUnitController::class,'delete']);
-*/
