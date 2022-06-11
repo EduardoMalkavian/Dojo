@@ -15,6 +15,9 @@ class Bulkseeder extends Seeder
      */
     public function run()
     {
-        
+        Bulk::create([
+            'name'=> 'Peso',
+            'Slug' => 'KG'
+        ]);
     }
 }

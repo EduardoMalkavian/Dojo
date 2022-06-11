@@ -19,11 +19,11 @@ return new class extends Migration
             $table->string('document',20);
             $table->string('email',45);
             $table->string('postal_code',45);
-            $table->string('address',100);
-            $table->string('neighborhood',45);
-            $table->string('city',45);
-            $table->string('number',15);
-            $table->string('state',2);
+            $table->string('address',100)->nullable();
+            $table->string('neighborhood',45)->nullable();
+            $table->string('city',45)->nullable();
+            $table->string('number',15)->nullable();
+            $table->string('state',2)->nullable();
             $table->timestamps();
         });
     }

@@ -15,6 +15,11 @@ class Customerseeder extends Seeder
      */
     public function run()
     {
-        //
+        Customer::create([
+        'name'=> 'Eduardo',
+        'document'=> '115',
+        'email'=> 'eduardoaraujo33@gmail.com',
+        'postal_code'=> '29179185'
+    ]);
     }
 }

@@ -18,9 +18,9 @@ return new class extends Migration
             $table->unsignedInteger('order_id');
             $table->unsignedInteger('product_id');
             $table->unsignedDouble('quantity');
-            $table->unsignedDouble('value');
-            $table->unsignedDouble('discount');
-            $table->unsignedDouble('perc_discount');
+            $table->unsignedDouble('value')->nullable();
+            $table->unsignedDouble('discount')->nullable();
+            $table->unsignedDouble('perc_discount')->nullable();
             $table->timestamps();
             $table->foreign('order_id')->references('id')->on('orders');
             $table->foreign('product_id')->references('id')->on('products');

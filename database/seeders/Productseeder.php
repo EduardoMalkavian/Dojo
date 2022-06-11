@@ -15,6 +15,11 @@ class Productseeder extends Seeder
      */
     public function run()
     {
-        //
+        Product::create([
+            'name'=> 'Racão Du Cão',
+            'category_id'=> '3',
+            'bulk_slug'=> "KG"
+
+        ]);
     }
 }
