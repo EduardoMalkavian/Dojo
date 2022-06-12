@@ -69,11 +69,11 @@ Route::put('orders/{id}',[OrderController::class,'update']);
 Route::delete('orders/{id}',[OrderController::class,'delete']);
 
 //stocks_locations
-Route::get('stocks_locations',[StockLocationController::class,'index']);
-Route::get('stocks_locations/{id}',[StockLocationController::class,'show']);
-Route::post('stocks_locations',[StockLocationController::class,'store']);
-Route::put('stocks_locations/{id}',[StockLocationController::class,'update']);
-Route::delete('stocks_locations/{id}',[StockLocationController::class,'delete']);
+Route::get('stockslocations',[StockLocationController::class,'index']);
+Route::get('stocklocations/{id}',[StockLocationController::class,'show']);
+Route::post('stocklocations',[StockLocationController::class,'store']);
+Route::put('stocklocations/{id}',[StockLocationController::class,'update']);
+Route::delete('stocklocations/{id}',[StockLocationController::class,'delete']);
 
 
 //stocks

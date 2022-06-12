@@ -21,5 +21,19 @@ class Productseeder extends Seeder
             'bulk_slug'=> "KG"
 
         ]);
+
+        Product::create([
+            'name'=> 'Racão Premier',
+            'category_id'=> '3',
+            'bulk_slug'=> "KG"
+
+        ]);
+
+        Product::create([
+            'name'=> 'Racão Golden',
+            'category_id'=> '3',
+            'bulk_slug'=> "KG"
+
+        ]);
     }
 }
