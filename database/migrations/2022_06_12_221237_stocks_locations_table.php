@@ -13,11 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('stocks_locations', function (Blueprint $table) {
-            $table->id();
-            $table->string('description',45);
-            $table->timestamps();
-        });
+        //
     }
 
     /**
@@ -27,6 +23,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('stocks_locations');
+        //
     }
 };
