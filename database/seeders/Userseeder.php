@@ -15,6 +15,11 @@ class Userseeder extends Seeder
      */
     public function run()
     {
-        //
+        User::create([
+            'name'=> 'eduardo',
+            'email' => 'eduardoaraujo33@exemplo.com',
+            'password' => '1234',
+
+        ]);
     }
 }
