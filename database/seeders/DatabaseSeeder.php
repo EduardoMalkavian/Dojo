@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
             Orderseeder::class,
             Bulkseeder::class,
             Productseeder::class,
-            StockLocationseeder::class,
+            Stock_Locationseeder::class,
             TypePeymentsseeder::class,
             Userseeder::class,
         ]);
