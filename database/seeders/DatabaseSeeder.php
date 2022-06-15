@@ -15,15 +15,16 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
+            Stock_Location::class,
             Categoryseeder::class,
             Customerseeder::class,
             OrderItemseeder::class,
             Orderseeder::class,
             Bulkseeder::class,
             Productseeder::class,
-            TypePeymentsseeder::class,
             Userseeder::class,
-            Stock_Locationseeder::class,
+            TypePeymentsseeder::class,
+            
         ]);
     }
 }
