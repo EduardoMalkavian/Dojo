@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\Stock_Location;
+use App\Models\StockLocation;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class Stock_Locationseeder extends Seeder
+class StockLocationseeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,7 +15,7 @@ class Stock_Locationseeder extends Seeder
      */
     public function run()
     {
-        Stock_Location::create([
+        StockLocation::create([
             'description'=> 'Central',
         ]);
     }

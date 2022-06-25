@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StockLocationRequest;
-use App\Models\Stock_Location;
+use App\Models\StockLocation;
 use Illuminate\Http\Request;
 
 class StockLocationController extends Controller{
@@ -11,13 +11,13 @@ class StockLocationController extends Controller{
 
     public function index()
     {
-        $data = Stock_Location::all();
+        $data = StockLocation::all();
         return response()->json($data);
     }
 
     public function show($id)
     {
-        $data = StockL_ocation::find($id);
+        $data = StockLocation::find($id);
         return response()->json($data);
     }
 

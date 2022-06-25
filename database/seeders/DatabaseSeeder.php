@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\StockLocation;
+use App\Models\TypePayment;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -15,7 +17,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-            Stock_Location::class,
             Categoryseeder::class,
             Customerseeder::class,
             OrderItemseeder::class,
@@ -23,8 +24,8 @@ class DatabaseSeeder extends Seeder
             Bulkseeder::class,
             Productseeder::class,
             Userseeder::class,
-            TypePeymentsseeder::class,
-            
+            StockLocationseeder::class,
+            TypePayment::class,
         ]);
     }
 }
