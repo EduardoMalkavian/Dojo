@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
             Productseeder::class,
             Userseeder::class,
             StockLocationseeder::class,
-            TypePayment::class,
+            TypePaymentseeder::class,
         ]);
     }
 }
