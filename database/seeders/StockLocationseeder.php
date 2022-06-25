@@ -15,7 +15,7 @@ class StockLocationseeder extends Seeder
      */
     public function run()
     {
-        StockLocation::create([
+        StockLocation::updateOrCreate([
             'description'=> 'Central',
         ]);
     }

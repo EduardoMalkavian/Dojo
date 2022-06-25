@@ -16,20 +16,20 @@ class Categoryseeder extends Seeder
      */
     public function run()
     {
-        $cozinha = Category::create([
+        $cozinha = Category::updateOrCreate([
             'name'=>'Cozinha',
         ]);
 
-        Category::create([
+        Category::updateOrCreate([
             'name'=>'Panela',
             'category_id' => $cozinha->id
         ]);
 
-        $pets = Category::create([
+        $pets = Category::updateOrCreate([
             'name'=>'Pets',
         ]);
            
-        Category::create([
+        Category::updateOrCreate([
             'name'=>'Ração',
             'category_id' => $pets->id
         ]);

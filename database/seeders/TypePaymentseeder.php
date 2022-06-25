@@ -15,7 +15,7 @@ class TypePaymentseeder extends Seeder
      */
     public function run()
     {
-        TypePayment::create([
+        TypePayment::updateOrCreate([
             'name'=> 'A Vista'
 
         ]);

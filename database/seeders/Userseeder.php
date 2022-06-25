@@ -15,7 +15,7 @@ class Userseeder extends Seeder
      */
     public function run()
     {
-        User::create([
+        User::updateOrCreate([
             'name'=> 'eduardo',
             'email' => 'eduardoaraujo33@exemplo.com',
             'password' => '1234',

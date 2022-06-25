@@ -15,21 +15,21 @@ class Productseeder extends Seeder
      */
     public function run()
     {
-        Product::create([
+        Product::updateOrCreate([
             'name'=> 'Racão Du Cão',
             'category_id'=> '3',
             'bulk_slug'=> "KG"
 
         ]);
 
-        Product::create([
+        Product::updateOrCreate([
             'name'=> 'Racão Premier',
             'category_id'=> '3',
             'bulk_slug'=> "KG"
 
         ]);
 
-        Product::create([
+        Product::updateOrCreate([
             'name'=> 'Racão Golden',
             'category_id'=> '3',
             'bulk_slug'=> "KG"
