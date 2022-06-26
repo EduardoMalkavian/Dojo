@@ -23,10 +23,22 @@ class Order extends Model
     ];
 
     protected $table = 'orders';
-    /*
-    protected $keyType = 'int';
-    protected $primaryKey = 'id';
-    public $incrementing = true;
-    */
+    
+    public function items()
+    {
+        return $this->hasMany(OrderItem::class);
+    }
 
+    public function customer()
+    {
+        return $this->belongsTo(Customer::class);
+    }
+    public function payment()
+    {
+        return $this->belongsTo(TypePayment::class);
+    }
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
