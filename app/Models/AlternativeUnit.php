@@ -21,4 +21,13 @@ class AlternativeUnit extends Model
     //protected $primaryKey = 'id';
     public $incrementing = true;
 
+    public function alternativeunit()
+    {
+        return $this->belongsTo(AlternativeUnit::class);
+    }
+
+    public function bulk()
+    {
+        return $this->belongsTo(Bulk::class);
+    }
 }
