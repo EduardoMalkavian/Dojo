@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\AlternativeUnit;
 use App\Models\StockLocation;
 use App\Models\TypePayment;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -26,6 +27,7 @@ class DatabaseSeeder extends Seeder
             Userseeder::class,
             StockLocationseeder::class,
             TypePaymentseeder::class,
+            AlternativeUnitseeder::class,
         ]);
     }
 }
