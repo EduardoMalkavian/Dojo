@@ -25,4 +25,16 @@ class OrderItem extends Model
     protected $primaryKey = 'seq';
     public $incrementing = true;
 
+    public function order()
+    {
+        return $this->belongsTo(Order::class);
+    }
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
+
+
+    
 }
