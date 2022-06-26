@@ -19,4 +19,14 @@ class Bulk extends Model
     protected $primaryKey = 'slug';
     public $incrementing = false;
 
+    public function product()
+    {
+        return $this->hasMany(Product::class);
+    }
+
+    public function alternativeunit()
+    {
+        return $this->hasMany(AlternativeUnit::class);
+    }
+
 }
