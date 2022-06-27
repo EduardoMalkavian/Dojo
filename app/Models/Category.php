@@ -15,10 +15,11 @@ class Category extends Model
     ];
 
     protected $table = 'categories';
-    /*
-    protected $keyType = 'int';
-    protected $primaryKey = 'id';
-    public $incrementing = true;
-    */
+   
+    public function product()
+    {
+        return $this->hasMany(Product::class);
+    }
+    
 
 }
