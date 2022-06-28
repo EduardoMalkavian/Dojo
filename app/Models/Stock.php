@@ -22,4 +22,14 @@ class Stock extends Model
     //protected $primaryKey = 'product_id';
     public $incrementing = false;
 
+    public function stocklocation()
+    {
+        return $this->belongsTo(StockLocation::class);
+    }
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
+
 }
