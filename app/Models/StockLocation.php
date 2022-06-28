@@ -16,4 +16,9 @@ class StockLocation extends Model
 
     ];
 
+    public function stock()
+    {
+        return $this->hasMany(Stock::class);
+    }
+
 }
