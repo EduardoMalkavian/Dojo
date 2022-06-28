@@ -27,10 +27,30 @@ class Product extends Model
     ];
 
     protected $table = 'products';
-    /*
-    protected $keyType = 'int';
-    protected $primaryKey = 'id';
-    public $incrementing = true;
-    */
+    
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+    public function bulks()
+    {
+        return $this->belongsTo(Bulk::class);
+    }
+
+    public function alternativeunit()
+    {
+        return $this->hasMany(AlternativeUnit::class);
+    }
+
+    public function items()
+    {
+        return $this->hasMany(OrderItem::class);
+    }
+
+    public function stocks()
+    {
+        return $this->hasMany(Stock::class);
+    }
 
 }
