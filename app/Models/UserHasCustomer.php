@@ -19,5 +19,13 @@ class UserHasCustomer extends Model
     //protected $primaryKey = 'users_id';
     public $incrementing = true;
 
-}
+    public function customer()
+    {
+        return $this->belongsTo(customer::class);
+    }
 
+    public function user()
+    {
+        return $this->belongsTo(user::class);
+    }
+}

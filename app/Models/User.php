@@ -18,9 +18,14 @@ class user extends Model
     ];
 
     protected $table = 'users';
-    public function order ()
+
+    public function order()
     {
         return $this->hasMany(Order::class);
     }
 
+    public function userHasCustomer()
+    {
+        return $this->hasMany(userHasCustomer::class);
+    }
 }
