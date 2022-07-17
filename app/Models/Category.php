@@ -15,11 +15,19 @@ class Category extends Model
     ];
 
     protected $table = 'categories';
-   
+
     public function product()
     {
         return $this->hasMany(Product::class);
     }
-    
 
+    public function childrren()
+    {
+        return $this->hasMany(Category::class, 'category_id', 'id');
+    }
+
+    public function father()
+    {
+        return $this->belongsTo(Category::class, 'category_id', 'id');
+    }
 }
