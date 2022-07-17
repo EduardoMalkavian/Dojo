@@ -6,8 +6,15 @@ use App\Http\Requests\OrderRequest;
 use App\Models\Order;
 use Illuminate\Http\Request;
 
-class OrderController extends Controller{
+class OrderController extends Controller
+{
 
+
+    private $model;
+    public function __construct(Order $model)
+    {
+        $this->model = $model;
+    }
 
     public function index()
     {
@@ -23,7 +30,7 @@ class OrderController extends Controller{
 
     public function store(OrderRequest $request)
     {
- 
+
         $data = Order::create($request->all());
         return response()->json($data);
     }
@@ -41,7 +48,6 @@ class OrderController extends Controller{
         $data = Order::find($id);
         $data->delete();
 
-        return response()->json('',201);
+        return response()->json('', 201);
     }
-
 }

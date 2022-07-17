@@ -6,8 +6,14 @@ use App\Http\Requests\ProductRequest;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
-class ProductsController extends Controller{
+class ProductsController extends Controller
+{
 
+    private $model;
+    public function __construct(Product $model)
+    {
+        $this->model = $model;
+    }
 
     public function index()
     {
@@ -41,7 +47,6 @@ class ProductsController extends Controller{
         $data = Product::find($id);
         $data->delete();
 
-        return response()->json('',201);
+        return response()->json('', 201);
     }
-
 }

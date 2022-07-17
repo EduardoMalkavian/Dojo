@@ -6,7 +6,14 @@ use App\Http\Requests\UserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 
-class UserController extends Controller{
+class UserController extends Controller
+{
+
+    private $model;
+    public function __construct(User $model)
+    {
+        $this->model = $model;
+    }
 
 
     public function index()
@@ -41,7 +48,6 @@ class UserController extends Controller{
         $data = User::find($id);
         $data->delete();
 
-        return response()->json('',201);
+        return response()->json('', 201);
     }
-
 }

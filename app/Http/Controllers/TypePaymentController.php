@@ -6,8 +6,14 @@ use App\Http\Requests\TypePaymentRequest;
 use App\Models\TypePayment;
 use Illuminate\Http\Request;
 
-class TypePaymentController extends Controller{
+class TypePaymentController extends Controller
+{
 
+    private $model;
+    public function __construct(TypePayment $model)
+    {
+        $this->model = $model;
+    }
 
     public function index()
     {
@@ -41,7 +47,6 @@ class TypePaymentController extends Controller{
         $data = TypePayment::find($id);
         $data->delete();
 
-        return response()->json('',201);
+        return response()->json('', 201);
     }
-
 }

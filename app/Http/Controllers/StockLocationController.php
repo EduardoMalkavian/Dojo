@@ -6,8 +6,14 @@ use App\Http\Requests\StockLocationRequest;
 use App\Models\StockLocation;
 use Illuminate\Http\Request;
 
-class StockLocationController extends Controller{
+class StockLocationController extends Controller
+{
 
+    private $model;
+    public function __construct(StockLocation $model)
+    {
+        $this->model = $model;
+    }
 
     public function index()
     {
@@ -30,7 +36,7 @@ class StockLocationController extends Controller{
 
     public function update(StockLocationRequest $request, $id)
     {
-   
+
         $data = StockLocation::find($id);
         $data->update($request->all());
         return response()->json($data);
@@ -41,7 +47,6 @@ class StockLocationController extends Controller{
         $data = StockLocation::find($id);
         $data->delete();
 
-        return response()->json('',201);
+        return response()->json('', 201);
     }
-
 }
