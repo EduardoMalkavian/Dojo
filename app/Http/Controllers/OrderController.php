@@ -18,29 +18,21 @@ class OrderController extends Controller
 
     public function index()
     {
-        $data = Order::all();
+        $data = $this->model->with('items')->get();
+
         return response()->json($data);
     }
 
     public function show($id)
     {
-        $data = Order::find($id);
-        return response()->json($data);
     }
 
     public function store(OrderRequest $request)
     {
-
-        $data = Order::create($request->all());
-        return response()->json($data);
     }
 
     public function update(OrderRequest $request, $id)
     {
-
-        $data = Order::find($id);
-        $data->update($request->all());
-        return response()->json($data);
     }
 
     public function delete($id)
