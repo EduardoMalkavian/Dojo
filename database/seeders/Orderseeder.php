@@ -19,6 +19,28 @@ class Orderseeder extends Seeder
         Order::updateOrCreate([
             'number' => 1,
             'observation' => "Agora vai",
+            'date' => "07.20.2022"
+
+        ]);
+
+        Order::updateOrCreate([
+            'number' => 2,
+            'observation' => " Segunda",
+            'date' => "07.20.2022"
+
+        ]);
+
+        Order::updateOrCreate([
+            'number' => 3,
+            'observation' => " terceiro",
+            'date' => "20.20.2022"
+
+        ]);
+
+        Order::updateOrCreate([
+            'number' => 7,
+            'observation' => " terceiro",
+            'date' => "20.20.2022"
 
         ]);
     }

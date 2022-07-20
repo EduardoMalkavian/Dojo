@@ -24,6 +24,20 @@ class Order extends Model
 
     protected $table = 'orders';
 
+    protected $appends = [
+        'total_order'
+    ];
+
+    public function getTotalOrderAttribute()
+    {
+
+        return $this->items
+            ->reduce(function (int $valor, OrderItem $item_Linha) {
+                return $valor = $valor + ($item_Linha->value * $item_Linha->quantity);
+            }, 0);
+    }
+
+
     public function items()
     {
         return $this->hasMany(OrderItem::class);

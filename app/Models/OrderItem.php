@@ -10,20 +10,19 @@ class OrderItem extends Model
     use HasFactory;
 
     protected $fillable = [
-        'seq',
+
         'orders_id',
         'product_id',
         'quantity',
         'value',
-        'discount',
-        'perc_discount'
+
 
     ];
 
     protected $table = 'orders_items';
-    protected $keyType = 'int';
-    protected $primaryKey = 'seq';
-    public $incrementing = true;
+    //protected $keyType = 'int';
+    //protected $primaryKey = 'seq';
+    //public $incrementing = true;
 
     public function order()
     {
@@ -34,7 +33,4 @@ class OrderItem extends Model
     {
         return $this->belongsTo(Product::class);
     }
-
-
-    
 }

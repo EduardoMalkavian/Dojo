@@ -18,8 +18,8 @@ return new class extends Migration
             // $table->unsignedInteger('seq')->primary();
             $table->unsignedInteger('order_id');
             $table->unsignedInteger('product_id');
-            $table->unsignedDouble('quantity');
-            $table->unsignedDouble('value')->nullable();
+            $table->unsignedDouble('quantity')->default(0);
+            $table->unsignedDouble('value')->default(0);
             // $table->unsignedDouble('discount')->nullable();
             //$table->unsignedDouble('perc_discount')->nullable();
             $table->timestamps();

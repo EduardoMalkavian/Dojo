@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Symfony\Contracts\Service\Attribute\Required;
 
 class OrderRequest extends FormRequest
 {
@@ -25,7 +26,8 @@ class OrderRequest extends FormRequest
     {
         return [
             'number' => 'required',
-            'observation' => 'required'
+            'observation' => 'required',
+            'data' => 'Required'
         ];
     }
 }

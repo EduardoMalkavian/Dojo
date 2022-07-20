@@ -15,6 +15,20 @@ class OrderItemseeder extends Seeder
      */
     public function run()
     {
-        //
+        OrderItem::updateOrCreate([
+            'order_id' => 1,
+            'product_id' => 1,
+            'quantity' => 3,
+            'value' => 8.7,
+
+        ]);
+
+        OrderItem::updateOrCreate([
+            'order_id' => 2,
+            'product_id' => 1,
+            'quantity' => 3,
+            'value' => 5.7,
+
+        ]);
     }
 }

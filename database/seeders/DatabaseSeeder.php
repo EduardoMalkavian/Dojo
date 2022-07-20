@@ -20,13 +20,13 @@ class DatabaseSeeder extends Seeder
         $this->call([
             Categoryseeder::class,
             Customerseeder::class,
-            OrderItemseeder::class,
-            Orderseeder::class,
             Bulkseeder::class,
             Productseeder::class,
-            Userseeder::class,
-            StockLocationseeder::class,
             TypePaymentseeder::class,
+            Userseeder::class,
+            Orderseeder::class,
+            OrderItemseeder::class,
+            StockLocationseeder::class,
             AlternativeUnitseeder::class,
         ]);
     }
