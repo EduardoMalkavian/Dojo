@@ -17,7 +17,7 @@ return new class extends Migration
             $table->unsignedInteger('product_id');
             $table->unsignedInteger('stock_location_id');
             $table->unsignedDouble('quantity');
-            $table->string('lote',45);
+            $table->string('lote', 45);
             $table->timestamps();
             $table->foreign('product_id')->references('id')->on('products');
             $table->foreign('stock_location_id')->references('id')->on('stock_locations');

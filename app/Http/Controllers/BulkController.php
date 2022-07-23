@@ -6,7 +6,8 @@ use App\Http\Requests\BulkRequest;
 use App\Models\Bulk;
 use Illuminate\Http\Request;
 
-class BulkController extends Controller{
+class BulkController extends Controller
+{
 
     private $model;
     public function __construct(Bulk $model)
@@ -31,7 +32,6 @@ class BulkController extends Controller{
     {
         $data = $this->model->create($request->all());
         return response()->json($data);
-
     }
 
     public function update(Request $request, $slug)
@@ -46,7 +46,6 @@ class BulkController extends Controller{
         $data = $this->model->find($slug);
         $data->delete();
 
-        return response()->json('',201);
+        return response()->json('', 201);
     }
-
 }
