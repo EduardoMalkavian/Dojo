@@ -25,8 +25,8 @@ class OrderRequest extends FormRequest
     public function rules()
     {
         return [
-            'number' => 'required',
-            'observation' => 'required',
+            //'number' => 'required',
+            'obsevation' => 'required',
             'data' => 'Required'
         ];
     }

@@ -16,8 +16,8 @@ return new class extends Migration
     {
         Schema::create('orders_items', function (Blueprint $table) {
             // $table->unsignedInteger('seq')->primary();
-            $table->unsignedInteger('order_id');
-            $table->unsignedInteger('product_id');
+            $table->integer('order_id');
+            $table->integer('product_id');
             $table->unsignedDouble('quantity')->default(0);
             $table->unsignedDouble('value')->default(0);
             // $table->unsignedDouble('discount')->nullable();
@@ -26,7 +26,7 @@ return new class extends Migration
             $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
             $table->foreign('product_id')->references('id')->on('products');
 
-            $table->primary('order_id', 'product_id');
+            $table->primary(['order_id', 'product_id']);
         });
     }
 

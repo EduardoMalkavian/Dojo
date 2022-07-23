@@ -32,9 +32,10 @@ class OrderController extends Controller
     {
         $max_number = DB::table('orders')->max('number');
 
+
         $request_data = $request->all();
         $order = Order::create([
-            'number' => $max_number + 1,
+            'number' => ($max_number === null ? env("NRO_INITPED") : $max_number) + 1,
             'date' => $request_data['data'],
             'observation' => $request_data['obsevation'],
         ]);
@@ -58,3 +59,8 @@ class OrderController extends Controller
         return response()->json('', 201);
     }
 }
+
+
+    /*if ($max_number === null) {
+            $max_number = env("NRO_INITPED");
+        }*/
