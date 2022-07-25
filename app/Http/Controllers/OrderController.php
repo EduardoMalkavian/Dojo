@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\OrderRequest;
 use App\Models\Order;
+use App\Models\OrderItem;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -22,6 +23,7 @@ class OrderController extends Controller
         $data = $this->model->with('items')->get();
 
         return response()->json($data);
+        /*return view("Order.create");*/
     }
 
     public function show($id)
@@ -44,6 +46,7 @@ class OrderController extends Controller
         foreach ($request_data['items'] as $item) {
             $order->items()->create($item);
         }
+
         return response()->json($order);
     }
 
@@ -58,6 +61,41 @@ class OrderController extends Controller
 
         return response()->json('', 201);
     }
+
+    public function deleteItem($id, $product_id)
+    {
+        $data = Order::find($id);
+        $data->deleteItem($product_id);
+
+        return response()->json('', 201);
+    }
+
+    /*public function deleteItemFromOrdem($product_id, $order_id)
+    {
+        $data = OrderItem::find($order_id, $product_id);
+        $data->delete();
+
+        return response()->json('', 201);
+    }
+
+    public function StoreAddItem(OrderRequest $request)
+    {
+
+        $request_data = $request->all();
+        $order = OrderItem::create([
+            'order_id' => $request_data['order_id'],
+            'product_id' => $request_data['product_id'],
+            'quantity' => $request_data['quantity'],
+            'value' => $request_data['value'],
+        ]);
+
+
+        foreach ($request_data['items'] as $item) {
+            $order->items()->create($item);
+        }
+
+        return response()->json($order);
+    }*/
 }
 
 
