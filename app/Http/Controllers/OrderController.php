@@ -88,11 +88,6 @@ class OrderController extends Controller
             'value' => $request_data['value'],
         ]);
 
-
-        foreach ($request_data['items'] as $item) {
-            $order->items()->create($item);
-        }
-
         return response()->json($order);
     }
 }

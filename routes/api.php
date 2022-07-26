@@ -65,6 +65,8 @@ Route::delete('orders_items/{seq}', [OrderItemController::class, 'delete']);*/
 Route::get('orders', [OrderController::class, 'index']);
 Route::get('orders/{id}', [OrderController::class, 'show']);
 Route::post('orders', [OrderController::class, 'store']);
+//tentativa de criar um metodo de incluir 1 item em um pedido
+Route::put('orders/{id}/orders_items', [OrderController::class, 'StoreAddItem']);
 Route::put('orders/{id}', [OrderController::class, 'update']);
 Route::delete('orders/{id}', [OrderController::class, 'delete']);
 
