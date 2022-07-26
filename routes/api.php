@@ -55,11 +55,11 @@ Route::put('customers/{id}', [CustomerController::class, 'update']);
 Route::delete('customers/{id}', [CustomerController::class, 'delete']);
 
 //orders_items
-Route::get('orders_items', [OrderItemController::class, 'index']);
+/*Route::get('orders_items', [OrderItemController::class, 'index']);
 Route::get('orders_items/{seq}', [OrderItemController::class, 'show']);
 Route::post('orders_items', [OrderItemController::class, 'store']);
 Route::put('orders_items/{seq}', [OrderItemController::class, 'update']);
-Route::delete('orders_items/{seq}', [OrderItemController::class, 'delete']);
+Route::delete('orders_items/{seq}', [OrderItemController::class, 'delete']);*/
 
 //orders
 Route::get('orders', [OrderController::class, 'index']);
@@ -67,7 +67,7 @@ Route::get('orders/{id}', [OrderController::class, 'show']);
 Route::post('orders', [OrderController::class, 'store']);
 Route::put('orders/{id}', [OrderController::class, 'update']);
 Route::delete('orders/{id}', [OrderController::class, 'delete']);
-Route::delete('orders/{id}/product/{product_id}', [OrderController::class, 'deleteItem']);
+Route::delete('orders/{id}/,products/{product_id}', [OrderController::class, 'deleteItem']);
 
 //stocks_locations
 Route::get('stocks_locations', [StockLocationController::class, 'index']);

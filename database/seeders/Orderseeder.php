@@ -38,7 +38,7 @@ class Orderseeder extends Seeder
         ]);
 
         Order::updateOrCreate([
-            'number' => 7,
+            'number' => 4,
             'observation' => " terceiro",
             'date' => "20.20.2022"
 

@@ -26,8 +26,8 @@ class OrderRequest extends FormRequest
     {
         return [
             //'number' => 'required',
-            'obsevation' => 'required',
-            'data' => 'Required'
+            'observation' => 'required',
+            'date' => 'Required'
         ];
     }
 }

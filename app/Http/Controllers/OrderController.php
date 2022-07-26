@@ -28,6 +28,8 @@ class OrderController extends Controller
 
     public function show($id)
     {
+        $data = Order::find($id);
+        return response()->json($data);
     }
 
     public function store(OrderRequest $request)
@@ -38,8 +40,8 @@ class OrderController extends Controller
         $request_data = $request->all();
         $order = Order::create([
             'number' => ($max_number === null ? env("NRO_INITPED") : $max_number) + 1,
-            'date' => $request_data['data'],
-            'observation' => $request_data['obsevation'],
+            'date' => $request_data['date'],
+            'observation' => $request_data['observation'],
         ]);
 
 
@@ -52,6 +54,10 @@ class OrderController extends Controller
 
     public function update(OrderRequest $request, $id)
     {
+
+        $data = Order::find($id);
+        $data->update($request->all());
+        return response()->json($data);
     }
 
     public function delete($id)
@@ -62,10 +68,10 @@ class OrderController extends Controller
         return response()->json('', 201);
     }
 
-    public function deleteItem($id, $product_id)
+    public function deleteItem($product_id, $order_id)
     {
-        $data = Order::find($id);
-        $data->deleteItem($product_id);
+        $data = Order::find($product_id, $order_id);
+        $data->deleteItem();
 
         return response()->json('', 201);
     }
