@@ -19,6 +19,7 @@ class OrderItem extends Model
 
     ];
 
+
     protected $table = 'orders_items';
     //protected $keyType = 'int';
     //protected $primaryKey = 'seq';

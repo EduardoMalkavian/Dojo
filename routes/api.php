@@ -67,7 +67,9 @@ Route::get('orders/{id}', [OrderController::class, 'show']);
 Route::post('orders', [OrderController::class, 'store']);
 Route::put('orders/{id}', [OrderController::class, 'update']);
 Route::delete('orders/{id}', [OrderController::class, 'delete']);
-Route::delete('orders/{id}/,products/{product_id}', [OrderController::class, 'deleteItem']);
+
+//tentativa de criar o delete item
+Route::delete('orders/{id}/orders_items', [OrderController::class, 'deleteItem']);
 
 //stocks_locations
 Route::get('stocks_locations', [StockLocationController::class, 'index']);
