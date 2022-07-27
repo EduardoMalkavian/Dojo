@@ -32,6 +32,13 @@ class OrderController extends Controller
         return response()->json($data);
     }
 
+    //tentativa de mostrar só 1 item do pedido
+    public function showItemOrder($id, $product_id)
+    {
+        $data = Order::find($id, $product_id);
+        return response()->json($data);
+    }
+
     public function store(OrderRequest $request)
     {
         $max_number = DB::table('orders')->max('number');
