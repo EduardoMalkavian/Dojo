@@ -77,12 +77,11 @@ class OrderController extends Controller
         return response()->json('', 201);
     }
 
-
-    public function StoreAddItem(OrderRequest $request)
+    //tentativa de criar item na ordem
+    public function StoreAddItem(OrderRequest $request, $id, $product_id)
     {
-        $request_data = $request->all();
+        $request_data = $request->find($id, $product_id);
         $order = OrderItem::create([
-            'order_id' => $request_data['order_id'],
             'product_id' => $request_data['product_id'],
             'quantity' => $request_data['quantity'],
             'value' => $request_data['value'],
