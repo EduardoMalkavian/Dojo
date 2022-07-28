@@ -67,13 +67,10 @@ Route::get('orders/{id}', [OrderController::class, 'show']);
 // tentativa de fazer aparecer 1 item de 1 pedido
 Route::get('orders/{id}/products/{products_id}', [OrderController::class, 'showItemOrder']);
 Route::post('orders', [OrderController::class, 'store']);
-//tentativa de criar um metodo de incluir 1 item em um pedido
-Route::post('orders/{id}/products/{products_id}', [OrderController::class, 'StoreAddItem']);
+//tentativa de criar um metodo para deletar 1 item em um pedido
+Route::delete('orders/{id}/products/{products_id}', [OrderController::class, 'deleteitem']);
 Route::put('orders/{id}', [OrderController::class, 'update']);
 Route::delete('orders/{id}', [OrderController::class, 'delete']);
-
-//tentativa de criar o delete item
-Route::delete('orders/{id}/products/{products_id}', [OrderController::class, 'deleteItem']);
 
 //stocks_locations
 Route::get('stocks_locations', [StockLocationController::class, 'index']);

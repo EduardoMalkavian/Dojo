@@ -16,23 +16,26 @@ class Productseeder extends Seeder
     public function run()
     {
         Product::updateOrCreate([
-            'name'=> 'Racão Du Cão',
-            'category_id'=> '3',
-            'bulk_slug'=> "KG"
+            'name' => 'Racão Du Cão',
+            'category_id' => '3',
+            'bulk_slug' => "KG",
+            'quantity' => "10"
 
         ]);
 
         Product::updateOrCreate([
-            'name'=> 'Racão Premier',
-            'category_id'=> '3',
-            'bulk_slug'=> "KG"
+            'name' => 'Racão Premier',
+            'category_id' => '3',
+            'bulk_slug' => "KG",
+            'quantity' => "10"
 
         ]);
 
         Product::updateOrCreate([
-            'name'=> 'Racão Golden',
-            'category_id'=> '3',
-            'bulk_slug'=> "KG"
+            'name' => 'Racão Golden',
+            'category_id' => '3',
+            'bulk_slug' => "KG",
+            'quantity' => "10"
 
         ]);
     }

@@ -75,17 +75,18 @@ class OrderController extends Controller
         return response()->json('', 201);
     }
 
-    //tentativa de criar um delete de 1 item só
-    public function deleteItem($id, $product_id)
+    public function deleteitem($data)
     {
-        $data = Order::find($id, $product_id);
-        $data->deleteItem();
+        $this->db->where('product_id', $data['product_id']);
+        $this->db->delete();
 
         return response()->json('', 201);
     }
 
+
+
     //tentativa de criar item na ordem
-    public function StoreAddItem(OrderRequest $request, $id, $product_id)
+    /* public function StoreAddItem(OrderRequest $request, $id, $product_id)
     {
         $request_data = $request->find($id, $product_id);
         $order = OrderItem::create([
@@ -95,7 +96,7 @@ class OrderController extends Controller
         ]);
 
         return response()->json($order);
-    }
+    }*/
 }
 
 
