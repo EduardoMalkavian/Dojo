@@ -24,8 +24,8 @@ class DatabaseSeeder extends Seeder
             Productseeder::class,
             TypePaymentseeder::class,
             Userseeder::class,
-            Orderseeder::class,
-            OrderItemseeder::class,
+            //Orderseeder::class,
+            //OrderItemseeder::class,
             StockLocationseeder::class,
             AlternativeUnitseeder::class,
         ]);

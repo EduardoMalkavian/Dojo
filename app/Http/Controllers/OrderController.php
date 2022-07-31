@@ -43,7 +43,6 @@ class OrderController extends Controller
     {
         $max_number = DB::table('orders')->max('number');
 
-
         $request_data = $request->all();
         $order = Order::create([
             'number' => ($max_number === null ? env("NRO_INITPED") : $max_number) + 1,
@@ -75,10 +74,11 @@ class OrderController extends Controller
         return response()->json('', 201);
     }
 
-    public function deleteitem($data)
+    public function deleteItem($id, $products_id)
     {
-        $this->db->where('product_id', $data['product_id']);
-        $this->db->delete();
+        //DB::table('orders_items')->where('order_id', $id)->where('product_id', $products_id)->delete();
+        //OrderItem::where('order_id', $id)->where('product_id', $products_id)->delete();
+        Order::find($id)->items()->where('product_id', $products_id)->delete();
 
         return response()->json('', 201);
     }
@@ -86,17 +86,17 @@ class OrderController extends Controller
 
 
     //tentativa de criar item na ordem
-    /* public function StoreAddItem(OrderRequest $request, $id, $product_id)
+    public function StoreAddItem(OrderRequest $request, $id)
     {
-        $request_data = $request->find($id, $product_id);
-        $order = OrderItem::create([
+        $request_data = $request->find($id);
+        $order = OrderItem::update([
             'product_id' => $request_data['product_id'],
             'quantity' => $request_data['quantity'],
             'value' => $request_data['value'],
         ]);
 
         return response()->json($order);
-    }*/
+    }
 }
 
 
